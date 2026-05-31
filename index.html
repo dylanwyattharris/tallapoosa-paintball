@@ -484,6 +484,78 @@
     .hero-title { font-size: clamp(3.5rem, 16vw, 6rem); }
     .stat-row { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ─── NAV DROPDOWN ─── */
+  .nav-dropdown { position: relative; }
+
+  .nav-drop-btn {
+    display: flex; align-items: center; gap: 0.3rem;
+  }
+  .nav-caret {
+    font-size: 0.6rem; opacity: 0.6; transition: transform .2s;
+    pointer-events: none;
+  }
+  .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
+
+  .nav-drop-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(6,6,6,0.98);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--red);
+    min-width: 200px;
+    z-index: 2000;
+    padding: 0.4rem 0;
+    backdrop-filter: blur(10px);
+    animation: dropIn .15s ease;
+  }
+  @keyframes dropIn {
+    from { opacity:0; transform: translateX(-50%) translateY(-6px); }
+    to   { opacity:1; transform: translateX(-50%) translateY(0); }
+  }
+
+  .nav-dropdown:hover .nav-drop-menu { display: block; }
+
+  .nav-drop-menu button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.25rem;
+    cursor: pointer;
+    text-align: left;
+    transition: color .15s, background .15s;
+    white-space: nowrap;
+  }
+  .nav-drop-menu button:hover {
+    color: var(--white);
+    background: rgba(204,0,0,0.1);
+  }
+  .nav-drop-menu button + button {
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Mobile section labels */
+  .mobile-section-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 0.75rem 2rem 0.25rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.25rem;
+  }
+
 </style>
 </head>
 <body>
@@ -504,13 +576,23 @@
   <ul class="nav-links">
     <li><button id="nav-home" class="active" onclick="showPage('home')">Home</button></li>
     <li><button id="nav-about" onclick="showPage('about')">About</button></li>
-    <li><button id="nav-hco" onclick="showPage('hco')">Hate City Open</button></li>
-    <li><button id="nav-birthday" onclick="showPage('birthday')">Birthdays</button></li>
+    <li class="nav-dropdown">
+      <button id="nav-hco" class="nav-drop-btn" onclick="showPage('hco')">Events <span class="nav-caret">&#9662;</span></button>
+      <div class="nav-drop-menu">
+        <button onclick="showPage('hco')">Hate City Open</button>
+        <button onclick="showPage('recap')">HCO Official Recap</button>
+        <button onclick="showPage('birthday')">Birthday Parties</button>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <button id="nav-membership" class="nav-drop-btn">Membership <span class="nav-caret">&#9662;</span></button>
+      <div class="nav-drop-menu">
+        <button onclick="showPage('membership')">Pricing &amp; Perks</button>
+        <button onclick="showPage('comingsoon')">Sign Up &mdash; Coming Soon</button>
+      </div>
+    </li>
     <li><button id="nav-faq" onclick="showPage('faq')">FAQ</button></li>
     <li><button id="nav-contact" onclick="showPage('contact')">Contact</button></li>
-    <li><button id="nav-recap" onclick="showPage('recap')">HCO Recap</button></li>
-    <li><button id="nav-membership" onclick="showPage('membership')">Membership</button></li>
-    <li><button id="nav-comingsoon" onclick="showPage('comingsoon')">Sign Up</button></li>
     <li><a class="nav-cta" href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank">BOOK TODAY</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -521,14 +603,16 @@
 <div class="mobile-menu" id="mobileMenu">
   <button id="mnav-home" class="active" onclick="showPage('home');toggleMenu()">Home</button>
   <button id="mnav-about" onclick="showPage('about');toggleMenu()">About</button>
-  <button id="mnav-hco" onclick="showPage('hco');toggleMenu()">Hate City Open</button>
-  <button id="mnav-birthday" onclick="showPage('birthday');toggleMenu()">Birthdays</button>
+  <div class="mobile-section-label">Events</div>
+  <button id="mnav-hco" onclick="showPage('hco');toggleMenu()">&#x2014; Hate City Open</button>
+  <button id="mnav-recap" onclick="showPage('recap');toggleMenu()">&#x2014; HCO Official Recap</button>
+  <button id="mnav-birthday" onclick="showPage('birthday');toggleMenu()">&#x2014; Birthday Parties</button>
+  <div class="mobile-section-label">Membership</div>
+  <button id="mnav-membership" onclick="showPage('membership');toggleMenu()">&#x2014; Pricing &amp; Perks</button>
+  <button id="mnav-comingsoon" onclick="showPage('comingsoon');toggleMenu()">&#x2014; Sign Up &mdash; Coming Soon</button>
   <button id="mnav-faq" onclick="showPage('faq');toggleMenu()">FAQ</button>
   <button id="mnav-contact" onclick="showPage('contact');toggleMenu()">Contact</button>
-  <button id="mnav-recap" onclick="showPage('recap');toggleMenu()">HCO Recap</button>
-  <button id="mnav-membership" onclick="showPage('membership');toggleMenu()">Membership</button>
-  <button id="mnav-comingsoon" onclick="showPage('comingsoon');toggleMenu()">Sign Up</button>
-  <a href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank" style="color:var(--red);font-weight:700;">&#x1F4C5; BOOK TODAY</a>
+  <a href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank" style="color:var(--red);font-weight:700;padding:0.75rem 2rem;display:block;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;">&#x1F4C5; BOOK TODAY</a>
 </div>
 
 <!-- SUMMER ALERT BAR -->
