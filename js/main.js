@@ -83,10 +83,19 @@ function dismissSplash() {
   setTimeout(() => { splash.style.display = 'none'; document.body.style.overflow = ''; }, 580);
 }
 
-// Splash on homepage only
+// Splash — first visit only
 if (document.getElementById('splash')) {
-  document.body.style.overflow = 'hidden';
-  document.addEventListener('keydown', function() { dismissSplash(); }, { once: true });
+  if (localStorage.getItem('tpb_visited')) {
+    // Returning visitor — skip splash instantly
+    const splash = document.getElementById('splash');
+    splash.style.display = 'none';
+    document.body.style.overflow = '';
+  } else {
+    // First visit — show splash, then remember them
+    document.body.style.overflow = 'hidden';
+    localStorage.setItem('tpb_visited', '1');
+    document.addEventListener('keydown', function() { dismissSplash(); }, { once: true });
+  }
 }
 
 // Weather widget
