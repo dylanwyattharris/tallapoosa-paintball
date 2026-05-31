@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership & Pricing | Tallapoosa Paintball</title>
+<meta name="description" content="Tallapoosa Paintball pricing, rental packages, paint costs, and 6-month membership perks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body><nav>
+  <a class="nav-logo" href="/">TALLAPOOSA <span>PAINTBALL</span></a>
+  <ul class="nav-links">
+    <li><a  href="/">Home</a></li>
+    <li><a  href="/about">About</a></li>
+    <li class="nav-dropdown">
+      <a class="nav-drop-btn">Events <span class="nav-caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a  href="/hco">Hate City Open</a>
+        <a  href="/hco/recap">HCO Official Recap</a>
+        <a  href="/birthday">Birthday Parties</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a class="active" class="nav-drop-btn">Membership <span class="nav-caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a class='active' href="/membership">Pricing &amp; Perks</a>
+        <a  href="/membership/signup">Sign Up &mdash; Coming Soon</a>
+      </div>
+    </li>
+    <li><a  href="/faq">FAQ</a></li>
+    <li><a  href="/weather" style="">&#x26C5; Field Weather</a></li>
+    <li><a  href="/contact">Contact</a></li>
+    <li><a class="nav-cta" href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank">BOOK TODAY</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <div class="mobile-section-label">Events</div>
+  <a href="/hco">&#x2014; Hate City Open</a>
+  <a href="/hco/recap">&#x2014; HCO Official Recap</a>
+  <a href="/birthday">&#x2014; Birthday Parties</a>
+  <div class="mobile-section-label">Membership</div>
+  <a href="/membership">&#x2014; Pricing &amp; Perks</a>
+  <a href="/membership/signup">&#x2014; Sign Up &mdash; Coming Soon</a>
+  <a href="/faq">FAQ</a>
+  <a href="/weather" style="color:#00c458;">&#x26C5; Field Weather</a>
+  <a href="/contact">Contact</a>
+  <a href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank" style="color:var(--red);font-weight:700;">&#x1F4C5; BOOK TODAY</a>
+</div>
+<div class="summer-alert">
+  <div class="summer-alert-inner">
+    <span class="summer-alert-tag">&#x2600;&#xFE0F; SUMMER 2026</span>
+    <span class="summer-alert-desktop">
+      <span class="summer-alert-text"><strong>Walk-On:</strong> 1st &amp; 3rd Weekends Only</span>
+      <span class="summer-alert-divider"></span>
+      <span class="summer-alert-text"><strong>Hours:</strong> 12PM &ndash; 6PM EST</span>
+      <span class="summer-alert-divider"></span>
+      <a class="summer-alert-text" href="/#schedule" style="color:var(--red);text-decoration:none;">VIEW CALENDAR &rarr;</a>
+    </span>
+    <span class="summer-alert-mobile">
+      <span class="summer-alert-text">1st &amp; 3rd Weekends &nbsp;&middot;&nbsp; <strong>12PM&ndash;6PM</strong></span>
+    </span>
+  </div>
+</div>
+<div style="position:relative;padding:140px 2rem 5rem;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(10,10,10,0.9) 70%,#0a0a0a 100%),url('https://static.wixstatic.com/media/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg/v1/fill/w_960,h_641,q_90,enc_avif,quality_auto/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg') center/cover no-repeat;border-bottom:3px solid var(--red);">
+  <div class="section-label">Pricing &amp; Membership</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6.5rem);letter-spacing:0.04em;line-height:0.92;color:#fff;margin-bottom:1.2rem;">JOIN THE<br><span style="color:var(--red);">TALLAPOOSA</span><br>FAMILY</h1>
+  <p style="font-size:1rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Pricing &middot; Rentals &middot; Paint &middot; Membership Perks</p>
+</div>
+<div class="weather-bar">
+  <div class="weather-bar-inner">
+    <div style="display:flex;align-items:center;gap:0.75rem;"><span style="font-size:0.7rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);">&#x1F4CD; Field Weather</span><span style="font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">Tallapoosa, GA</span></div>
+    <div id="weather-display" style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;"><span style="color:var(--muted);font-size:0.85rem;">Loading...</span></div>
+    <a href="/weather" style="font-size:0.7rem;color:var(--red);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;">FULL FORECAST &rarr;</a>
+  </div>
+</div>
+<section>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;"><div class="section-label">Walk-On &amp; Day Play</div><h2 class="section-title">DAY PLAY <span>PRICING</span></h2><div class="divider" style="margin:1rem auto 0;"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:4rem;">
+      <div style="background:var(--mid);padding:2.5rem 2rem;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red);"></div><span style="font-size:1.8rem;display:block;margin-bottom:1rem;">&#x1F3AF;</span><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;color:var(--white);margin-bottom:0.5rem;">Rental Package</div><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--red);line-height:1;margin-bottom:0.25rem;">$45</div><div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Includes 500 Balls</div><p style="font-size:0.85rem;color:var(--muted);line-height:1.65;">Full gear rental &mdash; marker, mask, protective equipment. Cleaned before every use.</p></div>
+      <div style="background:var(--mid);padding:2.5rem 2rem;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--border);"></div><span style="font-size:1.8rem;display:block;margin-bottom:1rem;">&#x1F4E6;</span><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;color:var(--white);margin-bottom:0.5rem;">Case of Paint</div><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--red);line-height:1;margin-bottom:0.25rem;">$80</div><div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Full Case</div><p style="font-size:0.85rem;color:var(--muted);line-height:1.65;">Full case of tournament-grade paintballs.</p></div>
+      <div style="background:var(--mid);padding:2.5rem 2rem;position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--border);"></div><span style="font-size:1.8rem;display:block;margin-bottom:1rem;">&#x1F4B0;</span><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;color:var(--white);margin-bottom:0.5rem;">Bag of Paint</div><div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--red);line-height:1;margin-bottom:0.25rem;">$25</div><div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Per Bag</div><p style="font-size:0.85rem;color:var(--muted);line-height:1.65;">Need a mid-game top-up? Grab a bag and keep running.</p></div>
+    </div>
+    <div style="text-align:center;margin-bottom:3rem;"><div class="section-label">For Regular Players</div><h2 class="section-title">6-MONTH <span>MEMBERSHIP</span></h2><div class="divider" style="margin:1rem auto 0;"></div></div>
+    <div class="membership-card-grid" style="gap:0;background:var(--border);border:1px solid var(--border);margin-bottom:4rem;max-width:900px;margin-left:auto;margin-right:auto;">
+      <div style="background:var(--red);padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:0.5rem;">6-Month Membership</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:5rem;color:#fff;line-height:1;margin-bottom:0.25rem;">$120</div>
+        <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:2rem;">Per 6 Months</div>
+        <div style="background:rgba(0,0,0,0.2);padding:1rem;margin-bottom:2rem;">
+          <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.25rem;">Member Paint Price</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;line-height:1;">$60 <span style="font-size:1rem;opacity:0.7;">/ case</span></div>
+          <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);margin-top:0.25rem;">vs. $80 standard &mdash; save $20/case</div>
+        </div>
+        <a href="/membership/signup" style="display:block;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.15em;text-align:center;padding:0.85rem 1rem;text-decoration:none;transition:background .2s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);">JOIN NOW &mdash; COMING SOON</a>
+        <p style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-align:center;margin-top:0.75rem;">Online signup launching soon</p>
+      </div>
+      <div style="background:var(--panel);padding:3rem 2.5rem;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.08em;color:var(--white);margin-bottom:1.75rem;">MEMBER <span style="color:var(--red);">PERKS</span></div>
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div style="display:flex;align-items:flex-start;gap:1rem;"><div style="width:28px;height:28px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><span style="color:var(--red);font-size:0.9rem;">&#x2713;</span></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);">Entry Covered</div><div style="font-size:0.82rem;color:var(--muted);line-height:1.5;margin-top:0.2rem;">Field entry included with any 1 case purchase.</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;"><div style="width:28px;height:28px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><span style="color:var(--red);font-size:0.9rem;">&#x2713;</span></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);">Member Paint Price</div><div style="font-size:0.82rem;color:var(--muted);line-height:1.5;margin-top:0.2rem;">Cases drop to <strong style="color:var(--gold);">$60</strong> — saving $20 every case.</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;"><div style="width:28px;height:28px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><span style="color:var(--red);font-size:0.9rem;">&#x2713;</span></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--white);">Free Rental If Your Gun Is Down</div><div style="font-size:0.82rem;color:var(--muted);line-height:1.5;margin-top:0.2rem;">Marker acting up? We'll put you in a rental at no charge.</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-bottom:2rem;"><div class="section-label">At a Glance</div><h2 class="section-title">PRICING <span>SUMMARY</span></h2><div class="divider" style="margin:1rem auto 2rem;"></div></div>
+    <div style="max-width:700px;margin:0 auto 4rem;border:1px solid var(--border);overflow:hidden;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;">
+        <div style="background:#111;padding:0.75rem 1.25rem;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);">Item</div>
+        <div style="background:#111;padding:0.75rem 1.25rem;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-align:center;">Standard</div>
+        <div style="background:#111;padding:0.75rem 1.25rem;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);text-align:center;">Member</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;"><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);">Rental (500 balls)</div><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);text-align:center;font-weight:700;">$45</div><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--gold);text-align:center;font-weight:700;">Free if gun down</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;"><div style="background:var(--panel);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);">Case of Paint</div><div style="background:var(--panel);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);text-align:center;font-weight:700;">$80</div><div style="background:var(--panel);padding:1rem 1.25rem;font-size:0.9rem;color:var(--gold);text-align:center;font-weight:700;">$60</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;"><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);">Bag of Paint</div><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);text-align:center;font-weight:700;">$25</div><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--gold);text-align:center;font-weight:700;">$25</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;"><div style="background:var(--panel);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);">Field Entry</div><div style="background:var(--panel);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);text-align:center;font-weight:700;">&mdash;</div><div style="background:var(--panel);padding:1rem 1.25rem;font-size:0.9rem;color:var(--gold);text-align:center;font-weight:700;">Covered w/ case</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;"><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);">6-Mo Membership</div><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--text);text-align:center;font-weight:700;">&mdash;</div><div style="background:var(--mid);padding:1rem 1.25rem;font-size:0.9rem;color:var(--gold);text-align:center;font-weight:700;">$120</div></div>
+    </div>
+  </div>
+</section><footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="/">TALLAPOOSA <span>PAINTBALL</span></a>
+      <p>Authentic outdoor woodsball in Tallapoosa, Georgia. Walk-on play on the 1st &amp; 3rd weekends. Summer hours: 12PM&ndash;6PM.</p>
+      <div class="social-row" style="margin-top:1.5rem;">
+        <a class="social-btn" href="https://www.facebook.com/TallapoosaPaintBall/" target="_blank">&#x1F4D8;</a>
+        <a class="social-btn" href="https://www.instagram.com/tallapoosapaintball" target="_blank">&#x1F4F7;</a>
+        <a class="social-btn" href="https://www.tiktok.com/@tallapoosapaintball" target="_blank">&#x1F3B5;</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="/">Home</a></li><li><a href="/about">About</a></li>
+      <li><a href="/hco">Hate City Open</a></li><li><a href="/birthday">Birthdays</a></li>
+      <li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li>
+      <li><a href="/membership">Membership</a></li><li><a href="/weather">Field Weather</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Book &amp; Play</h4><ul>
+      <li><a href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank">Book Today</a></li>
+      <li><a href="https://www.strideevents.com/events/tallapoosa-waiver-registration/2026/register" target="_blank">Sign Waiver</a></li>
+      <li><a href="https://share.google/ZfCZCzbYbNk8jC0mU" target="_blank">Leave a Review</a></li>
+      <li><a href="tel:7706910369">(770) 691-0369</a></li>
+      <li><a href="mailto:TallapoosaPaintball@Gmail.com">Email Us</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Tallapoosa Paintball | All Rights Reserved</span>
+    <span>Designed by <a href="http://www.dwglobalfl.com" target="_blank">DW Global Management</a> &mdash; Orlando, Florida</span>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="/js/main.js"></script>
+</body></html>
