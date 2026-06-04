@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Kit | Tallapoosa Paintball</title>
+<meta name="description" content="Official media kit for Tallapoosa Paintball — logos, brand assets, field photos, press info, and media contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* ── MEDIA KIT STYLES ── */
+  .media-hero {
+    padding: 140px 2rem 4rem;
+    text-align: center;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(10,10,10,0.92) 70%,#0a0a0a 100%),
+      url('https://static.wixstatic.com/media/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg/v1/fill/w_960,h_641,q_90,enc_avif,quality_auto/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg') center/cover no-repeat;
+    border-bottom: 3px solid var(--red);
+  }
+
+  /* SECTION DIVIDERS */
+  .media-section {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .media-section:last-of-type { border-bottom: none; }
+
+  .media-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* LOGO CARDS */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .logo-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .logo-card:hover { border-color: var(--red); }
+
+  .logo-preview {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+  }
+  .logo-preview.bg-dark  { background: #000; }
+  .logo-preview.bg-white { background: #fff; }
+  .logo-preview.bg-red   { background: var(--red); }
+  .logo-preview.bg-mid   { background: var(--mid); }
+
+  .logo-preview-text {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .logo-card-info {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .logo-card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .logo-card-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .logo-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--mid);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .dl-btn:hover { border-color: var(--red); color: var(--white); background: rgba(204,0,0,0.08); }
+  .dl-btn.primary { background: var(--red); border-color: var(--red); color: #fff; }
+  .dl-btn.primary:hover { background: var(--red-hot); }
+
+  /* COLOR SWATCHES */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .swatch-card {
+    border: 1px solid var(--border);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .15s;
+  }
+  .swatch-card:hover { transform: translateY(-2px); }
+  .swatch-color {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+  }
+  .swatch-copy-hint {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .2s;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+  }
+  .swatch-card:hover .swatch-copy-hint { opacity: 1; }
+  .swatch-info {
+    background: var(--panel);
+    padding: 0.9rem 1rem;
+  }
+  .swatch-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .swatch-hex {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .swatch-codes {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .swatch-code-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 0.1rem 0.4rem;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* TYPOGRAPHY */
+  .type-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+  .type-sample-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .type-sample-body {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  .type-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .type-meta-item { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; }
+  .type-meta-item strong { color: var(--text); }
+
+  /* PHOTO GRID */
+  .press-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .press-photo-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3;
+    background: var(--mid);
+  }
+  .press-photo-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s, filter .3s;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .press-photo-card:hover img { transform: scale(1.03); filter: none; }
+  .press-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity .2s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .press-photo-card:hover .press-photo-overlay { opacity: 1; }
+
+  /* FACTS TABLE */
+  .facts-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    max-width: 800px;
+  }
+  .facts-table tr { border-bottom: 1px solid var(--border); }
+  .facts-table tr:last-child { border-bottom: none; }
+  .facts-table td {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.9rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .facts-table td:first-child {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    white-space: nowrap;
+    background: rgba(204,0,0,0.04);
+    width: 160px;
+  }
+  .facts-table td:last-child { color: var(--text); }
+  .facts-table tr:nth-child(even) td:last-child { background: rgba(255,255,255,0.02); }
+
+  /* SOCIAL HANDLES */
+  .handle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .handle-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color .2s, background .2s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .handle-card:hover { border-color: var(--red); background: rgba(204,0,0,0.04); }
+  .handle-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .handle-platform { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+  .handle-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); }
+
+  /* MEDIA CONTACT */
+  .media-contact-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    padding: 2.5rem;
+    max-width: 700px;
+  }
+
+  /* COPY TOAST */
+  #copy-toast {
+    position: fixed;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--panel);
+    border: 1px solid var(--red);
+    color: var(--white);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    z-index: 9999;
+    display: none;
+    white-space: nowrap;
+  }
+  #copy-toast.show { display: block; animation: slideIn .25s ease; }
+
+  @media (max-width: 768px) {
+    .media-section-header { flex-direction: column; align-items: flex-start; }
+    .facts-table td:first-child { width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">TALLAPOOSA <span>PAINTBALL</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li class="nav-dropdown">
+      <a class="nav-drop-btn">Events <span class="nav-caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a href="/hco">Hate City Open</a>
+        <a href="/hco/recap">HCO Official Recap</a>
+        <a href="/birthday">Birthday Parties</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a class="nav-drop-btn">Membership <span class="nav-caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a href="/membership">Pricing &amp; Perks</a>
+        <a href="/membership/signup">Sign Up &mdash; Coming Soon</a>
+      </div>
+    </li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/weather">&#x26C5; Field Weather</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a class="active" href="/media" style="color:var(--red);">Media Kit</a></li>
+    <li><a class="nav-cta" href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank">BOOK TODAY</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <div class="mobile-section-label">Events</div>
+  <a href="/hco">&#x2014; Hate City Open</a>
+  <a href="/hco/recap">&#x2014; HCO Official Recap</a>
+  <a href="/birthday">&#x2014; Birthday Parties</a>
+  <div class="mobile-section-label">Membership</div>
+  <a href="/membership">&#x2014; Pricing &amp; Perks</a>
+  <a href="/membership/signup">&#x2014; Sign Up &mdash; Coming Soon</a>
+  <a href="/faq">FAQ</a>
+  <a href="/weather">&#x26C5; Field Weather</a>
+  <a href="/contact">Contact</a>
+  <a href="/media" style="color:var(--red);">Media Kit</a>
+  <a href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank" style="color:var(--red);font-weight:700;">&#x1F4C5; BOOK TODAY</a>
+</div>
+<div class="summer-alert">
+  <div class="summer-alert-inner">
+    <span class="summer-alert-tag">&#x2600;&#xFE0F; SUMMER 2026</span>
+    <span class="summer-alert-desktop">
+      <span class="summer-alert-text"><strong>Walk-On:</strong> 1st &amp; 3rd Weekends Only</span>
+      <span class="summer-alert-divider"></span>
+      <span class="summer-alert-text"><strong>Hours:</strong> 12PM &ndash; 6PM EST</span>
+      <span class="summer-alert-divider"></span>
+      <a class="summer-alert-text" href="/#schedule" style="color:var(--red);text-decoration:none;">VIEW CALENDAR &rarr;</a>
+    </span>
+    <span class="summer-alert-mobile">
+      <span class="summer-alert-text">1st &amp; 3rd Weekends &nbsp;&middot;&nbsp; <strong>12PM&ndash;6PM</strong></span>
+    </span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="media-hero">
+  <div class="section-label">Press &amp; Brand Resources</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:0.04em;line-height:0.92;color:#fff;margin-bottom:1rem;">MEDIA <span style="color:var(--red);">KIT</span></h1>
+  <p style="font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Logos &middot; Brand Colors &middot; Typography &middot; Photos &middot; Press Info</p>
+  <div style="margin-top:1.5rem;display:inline-flex;align-items:center;gap:0.75rem;background:rgba(204,0,0,0.1);border:1px solid rgba(204,0,0,0.3);padding:0.6rem 1.25rem;">
+    <span style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Media Inquiries:</span>
+    <a href="mailto:aria@hq.dwglobalfl.com" style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;color:var(--red);text-decoration:none;">aria@hq.dwglobalfl.com</a>
+  </div>
+</div>
+
+<!-- ═══ QUICK FACTS ═══ -->
+<div class="media-section">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Overview</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">QUICK <span>FACTS</span></h2>
+      </div>
+    </div>
+    <table class="facts-table">
+      <tr><td>Full Name</td><td>Tallapoosa Paintball, LLC</td></tr>
+      <tr><td>Type</td><td>Outdoor Woodsball Paintball Venue &amp; Tournament Host</td></tr>
+      <tr><td>Founded</td><td>2025</td></tr>
+      <tr><td>Location</td><td>830 Steadman Road, Tallapoosa, GA 30176</td></tr>
+      <tr><td>Mailing</td><td>11400 East Veterans Memorial Highway, Douglasville, Georgia 30134</td></tr>
+      <tr><td>Phone</td><td>(770) 691-0369</td></tr>
+      <tr><td>General Email</td><td>TallapoosaPaintball@Gmail.com</td></tr>
+      <tr><td>Website</td><td>tallapoosapb.com</td></tr>
+      <tr><td>Walk-On Hours</td><td>1st &amp; 3rd Weekends of Each Month &mdash; 12PM&ndash;6PM EST (Summer 2026)</td></tr>
+      <tr><td>Private Groups</td><td>10+ players, any weekday or weekend &mdash; call to book</td></tr>
+      <tr><td>Services</td><td>Woodsball, Equipment Rental, Walk-On Play, Private Bookings, Birthday Parties, Tournaments</td></tr>
+      <tr><td>Tournament</td><td>Hate City Open (HCO) &mdash; WCPL-sanctioned Ten-Man Mechanical Marker Woodsball</td></tr>
+      <tr><td>HCO Champions</td><td>The Misfits &mdash; 2026 Inaugural Hate City Open Champions (April 18&ndash;19, 2026)</td></tr>
+      <tr><td>Tagline</td><td>Feel the Rush. Live the Game.</td></tr>
+      <tr><td>Management</td><td>DW Global Management &mdash; Orlando, Florida &mdash; dwglobalfl.com</td></tr>
+      <tr><td>Media Contact</td><td>aria@hq.dwglobalfl.com</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ LOGOS ═══ -->
+<div class="media-section" style="background:var(--mid);">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Brand Identity</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">LOGOS &amp; <span>WORDMARKS</span></h2>
+      </div>
+      <p style="font-size:0.8rem;color:var(--muted);max-width:380px;line-height:1.6;">Use the logo on dark backgrounds whenever possible. Do not alter colors, stretch, or add effects. Always maintain clear space around the mark.</p>
+    </div>
+    <div class="logo-grid">
+
+      <!-- Primary — dark bg -->
+      <div class="logo-card">
+        <div class="logo-preview bg-dark">
+          <div class="logo-preview-text" style="font-size:clamp(1.8rem,4vw,2.4rem);color:#fff;">TALLAPOOSA<br><span style="color:var(--red);">PAINTBALL</span></div>
+        </div>
+        <div class="logo-card-info">
+          <div class="logo-card-name">Primary Wordmark — Dark</div>
+          <div class="logo-card-meta">White + Red &middot; Use on dark backgrounds</div>
+          <div class="logo-card-actions">
+            <a href="https://static.wixstatic.com/media/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg" target="_blank" class="dl-btn primary">&#x2193; PNG</a>
+            <button class="dl-btn" onclick="copyText('TALLAPOOSA PAINTBALL','Name copied')">&#x29C9; Copy Name</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reversed — white bg -->
+      <div class="logo-card">
+        <div class="logo-preview bg-white">
+          <div class="logo-preview-text" style="font-size:clamp(1.8rem,4vw,2.4rem);color:#000;">TALLAPOOSA<br><span style="color:var(--red);">PAINTBALL</span></div>
+        </div>
+        <div class="logo-card-info">
+          <div class="logo-card-name">Reversed Wordmark — Light</div>
+          <div class="logo-card-meta">Black + Red &middot; Use on light backgrounds</div>
+          <div class="logo-card-actions">
+            <button class="dl-btn" onclick="copyText('@tallapoosapaintball','Handle copied')">&#x29C9; Copy Handle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Red bg -->
+      <div class="logo-card">
+        <div class="logo-preview bg-red">
+          <div class="logo-preview-text" style="font-size:clamp(1.8rem,4vw,2.4rem);color:#fff;">TALLAPOOSA<br>PAINTBALL</div>
+        </div>
+        <div class="logo-card-info">
+          <div class="logo-card-name">Red Background Version</div>
+          <div class="logo-card-meta">White only &middot; Use on red brand backgrounds</div>
+          <div class="logo-card-actions">
+            <button class="dl-btn" onclick="copyText('TALLAPOOSA PAINTBALL LLC','Full name copied')">&#x29C9; Copy Full Name</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HCO Logo -->
+      <div class="logo-card">
+        <div class="logo-preview bg-dark">
+          <img src="https://static.wixstatic.com/media/0f4605_9e92181c310f4feea9f1d52cdcc6e944~mv2.png/v1/fill/w_444,h_486,al_c,q_85,enc_avif,quality_auto/01142026Our%20First.png" alt="Hate City Open Logo" style="max-height:140px;max-width:100%;object-fit:contain;">
+        </div>
+        <div class="logo-card-info">
+          <div class="logo-card-name">Hate City Open — Event Logo</div>
+          <div class="logo-card-meta">HCO Tournament Series &middot; Dark backgrounds only</div>
+          <div class="logo-card-actions">
+            <a href="https://static.wixstatic.com/media/0f4605_9e92181c310f4feea9f1d52cdcc6e944~mv2.png" target="_blank" class="dl-btn primary">&#x2193; PNG</a>
+            <button class="dl-btn" onclick="copyText('Hate City Open','Name copied')">&#x29C9; Copy Name</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:rgba(204,0,0,0.06);border:1px solid rgba(204,0,0,0.2);">
+      <p style="font-size:0.8rem;color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Usage Guidelines:</strong> Do not alter, recolor, distort, or add effects to any Tallapoosa Paintball logo. Do not place the logo on cluttered backgrounds. Always maintain adequate clear space. For custom use cases contact <a href="mailto:aria@hq.dwglobalfl.com" style="color:var(--red);">aria@hq.dwglobalfl.com</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BRAND COLORS ═══ -->
+<div class="media-section">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Brand Identity</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">BRAND <span>COLORS</span></h2>
+      </div>
+      <p style="font-size:0.8rem;color:var(--muted);">Click any swatch to copy the hex code.</p>
+    </div>
+    <div class="swatch-grid">
+
+      <div class="swatch-card" onclick="copyText('#CC0000','#CC0000 copied')">
+        <div class="swatch-color" style="background:#CC0000;">
+          <span class="swatch-copy-hint" style="color:rgba(255,255,255,0.8);">Click to copy</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">TPB Red</div>
+          <div class="swatch-hex">#CC0000</div>
+          <div class="swatch-codes">
+            <span class="swatch-code-tag">R 204 G 0 B 0</span>
+            <span class="swatch-code-tag">C0 M100 Y100 K20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-card" onclick="copyText('#FF1A1A','#FF1A1A copied')">
+        <div class="swatch-color" style="background:#FF1A1A;">
+          <span class="swatch-copy-hint" style="color:rgba(255,255,255,0.8);">Click to copy</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Hot Red</div>
+          <div class="swatch-hex">#FF1A1A</div>
+          <div class="swatch-codes">
+            <span class="swatch-code-tag">R 255 G 26 B 26</span>
+            <span class="swatch-code-tag">Hover / Accent</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-card" onclick="copyText('#111111','#111111 copied')">
+        <div class="swatch-color" style="background:#111111;border-bottom:1px solid #2a2a2a;">
+          <span class="swatch-copy-hint" style="color:rgba(255,255,255,0.5);">Click to copy</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">TPB Black</div>
+          <div class="swatch-hex">#111111</div>
+          <div class="swatch-codes">
+            <span class="swatch-code-tag">R 17 G 17 B 17</span>
+            <span class="swatch-code-tag">Primary BG</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-card" onclick="copyText('#0A0A0A','#0A0A0A copied')">
+        <div class="swatch-color" style="background:#0A0A0A;border-bottom:1px solid #2a2a2a;">
+          <span class="swatch-copy-hint" style="color:rgba(255,255,255,0.5);">Click to copy</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Black</div>
+          <div class="swatch-hex">#0A0A0A</div>
+          <div class="swatch-codes">
+            <span class="swatch-code-tag">R 10 G 10 B 10</span>
+            <span class="swatch-code-tag">Page BG</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-card" onclick="copyText('#E8E8E8','#E8E8E8 copied')">
+        <div class="swatch-color" style="background:#E8E8E8;">
+          <span class="swatch-copy-hint" style="color:rgba(0,0,0,0.5);">Click to copy</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Body Text</div>
+          <div class="swatch-hex">#E8E8E8</div>
+          <div class="swatch-codes">
+            <span class="swatch-code-tag">R 232 G 232 B 232</span>
+            <span class="swatch-code-tag">Primary Text</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatch-card" onclick="copyText('#C9A84C','#C9A84C copied')">
+        <div class="swatch-color" style="background:#C9A84C;">
+          <span class="swatch-copy-hint" style="color:rgba(0,0,0,0.6);">Click to copy</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">TPB Gold</div>
+          <div class="swatch-hex">#C9A84C</div>
+          <div class="swatch-codes">
+            <span class="swatch-code-tag">R 201 G 168 B 76</span>
+            <span class="swatch-code-tag">Awards / Accent</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TYPOGRAPHY ═══ -->
+<div class="media-section" style="background:var(--mid);">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Brand Identity</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">TYPOGRAPHY</h2>
+      </div>
+      <a href="https://fonts.google.com/specimen/Bebas+Neue" target="_blank" class="dl-btn">Get Fonts on Google Fonts &rarr;</a>
+    </div>
+
+    <div class="type-card">
+      <div style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;">Primary Heading Font</div>
+      <div class="type-sample-heading">TALLAPOOSA PAINTBALL<br><span style="color:var(--red);">FEEL THE RUSH.</span></div>
+      <div class="type-meta">
+        <div class="type-meta-item">Font <strong>Bebas Neue</strong></div>
+        <div class="type-meta-item">Weight <strong>Regular (400)</strong></div>
+        <div class="type-meta-item">Use <strong>Headlines, Titles, Callouts</strong></div>
+        <div class="type-meta-item">Letter Spacing <strong>0.04em &ndash; 0.15em</strong></div>
+        <div class="type-meta-item">Source <strong>Google Fonts</strong></div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div style="font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;">Body &amp; UI Font</div>
+      <div class="type-sample-body">Authentic outdoor woodsball in Tallapoosa, Georgia. Walk-on play on the 1st and 3rd weekends of each month. Summer hours: 12PM&ndash;6PM EST.</div>
+      <div style="font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.15em;margin-top:0.75rem;">NAVIGATION &middot; LABELS &middot; SUBHEADINGS &middot; BUTTONS</div>
+      <div class="type-meta">
+        <div class="type-meta-item">Font <strong>Barlow Condensed</strong></div>
+        <div class="type-meta-item">Weights <strong>300, 400, 600, 700</strong></div>
+        <div class="type-meta-item">Use <strong>Body, UI, Captions, Labels</strong></div>
+        <div class="type-meta-item">Source <strong>Google Fonts</strong></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ FIELD PHOTOS ═══ -->
+<div class="media-section">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Press Assets</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">FIELD <span>PHOTOS</span></h2>
+      </div>
+      <p style="font-size:0.8rem;color:var(--muted);max-width:360px;line-height:1.6;">Photos may be used for editorial and press coverage of Tallapoosa Paintball. For commercial licensing contact media.</p>
+    </div>
+    <div class="press-photo-grid">
+      <div class="press-photo-card">
+        <img src="https://static.wixstatic.com/media/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg/v1/fill/w_960,h_641,q_90,enc_avif,quality_auto/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg" alt="Tallapoosa Paintball field">
+        <div class="press-photo-overlay"><span class="dl-btn primary" onclick="window.open('https://static.wixstatic.com/media/0f4605_57da77dc2bc6458ea08bdb8ffb87c429~mv2.jpg','_blank')">&#x2193; Download</span></div>
+      </div>
+      <div class="press-photo-card">
+        <img src="https://static.wixstatic.com/media/0f4605_3f7ce335d0464107a85a57e8a226c381~mv2.jpg/v1/fit/w_480,h_720,q_90,enc_avif,quality_auto/0f4605_3f7ce335d0464107a85a57e8a226c381~mv2.jpg" alt="Woodsball player">
+        <div class="press-photo-overlay"><span class="dl-btn primary" onclick="window.open('https://static.wixstatic.com/media/0f4605_3f7ce335d0464107a85a57e8a226c381~mv2.jpg','_blank')">&#x2193; Download</span></div>
+      </div>
+      <div class="press-photo-card">
+        <img src="https://static.wixstatic.com/media/0f4605_469591756ee841d8afc7dcb145206e8b~mv2.jpg/v1/fit/w_480,h_720,q_90,enc_avif,quality_auto/0f4605_469591756ee841d8afc7dcb145206e8b~mv2.jpg" alt="Player in action">
+        <div class="press-photo-overlay"><span class="dl-btn primary" onclick="window.open('https://static.wixstatic.com/media/0f4605_469591756ee841d8afc7dcb145206e8b~mv2.jpg','_blank')">&#x2193; Download</span></div>
+      </div>
+      <div class="press-photo-card">
+        <img src="https://static.wixstatic.com/media/0f4605_28b42716c1f748d7ad06e8250b990bf0~mv2.jpg/v1/fit/w_480,h_720,q_90,enc_avif,quality_auto/0f4605_28b42716c1f748d7ad06e8250b990bf0~mv2.jpg" alt="Game play">
+        <div class="press-photo-overlay"><span class="dl-btn primary" onclick="window.open('https://static.wixstatic.com/media/0f4605_28b42716c1f748d7ad06e8250b990bf0~mv2.jpg','_blank')">&#x2193; Download</span></div>
+      </div>
+      <div class="press-photo-card">
+        <img src="https://static.wixstatic.com/media/0f4605_d1ea9a08ca3043c5a596553edd9f9ce8~mv2.jpg/v1/fill/w_879,h_586,al_c,q_85,enc_avif,quality_auto/21373.jpg" alt="HCO Tournament">
+        <div class="press-photo-overlay"><span class="dl-btn primary" onclick="window.open('https://static.wixstatic.com/media/0f4605_d1ea9a08ca3043c5a596553edd9f9ce8~mv2.jpg','_blank')">&#x2193; Download</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SOCIAL ═══ -->
+<div class="media-section" style="background:var(--mid);">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Social Media</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">HANDLES &amp; <span>CHANNELS</span></h2>
+      </div>
+    </div>
+    <div class="handle-grid">
+      <a class="handle-card" href="https://www.facebook.com/TallapoosaPaintBall/" target="_blank">
+        <span class="handle-icon">&#x1F4D8;</span>
+        <div><div class="handle-platform">Facebook</div><div class="handle-name">@TallapoosaPaintBall</div></div>
+      </a>
+      <a class="handle-card" href="https://www.instagram.com/tallapoosapaintball" target="_blank">
+        <span class="handle-icon">&#x1F4F7;</span>
+        <div><div class="handle-platform">Instagram</div><div class="handle-name">@tallapoosapaintball</div></div>
+      </a>
+      <a class="handle-card" href="https://www.tiktok.com/@tallapoosapaintball" target="_blank">
+        <span class="handle-icon">&#x1F3B5;</span>
+        <div><div class="handle-platform">TikTok</div><div class="handle-name">@tallapoosapaintball</div></div>
+      </a>
+      <div class="handle-card" onclick="copyText('@tallapoosapaintball','Handle copied to clipboard')" style="cursor:pointer;">
+        <span class="handle-icon">&#x29C9;</span>
+        <div><div class="handle-platform">Universal Handle</div><div class="handle-name">@tallapoosapaintball</div></div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);">
+      <p style="font-size:0.8rem;color:var(--muted);line-height:1.7;"><strong style="color:var(--white);">Tagging:</strong> When covering Tallapoosa Paintball, please tag <strong style="color:var(--white);">@tallapoosapaintball</strong> across all platforms. Use hashtags <strong style="color:var(--white);">#tallapoosapaintball #woodsball #atlpaintball #paintball #HateCityOpen</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRICING / KEY INFO ═══ -->
+<div class="media-section">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Key Information</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">PRICING &amp; <span>SERVICES</span></h2>
+      </div>
+    </div>
+    <table class="facts-table">
+      <tr><td>Rental Package</td><td>$45 &mdash; includes 500 paintballs, marker, mask, and all protective gear</td></tr>
+      <tr><td>Case of Paint</td><td>$80 per case (standard) &mdash; $60 per case (members)</td></tr>
+      <tr><td>Bag of Paint</td><td>$25 per bag</td></tr>
+      <tr><td>6-Mo Membership</td><td>$120 &mdash; entry covered with case purchase, $60 member paint, free rental if marker is down</td></tr>
+      <tr><td>Walk-On Play</td><td>1st and 3rd weekends of each month, 12PM&ndash;6PM EST (Summer 2026 hours)</td></tr>
+      <tr><td>Private Groups</td><td>10 or more players, any weekday or weekend &mdash; call (770) 691-0369 to book</td></tr>
+      <tr><td>Birthday Parties</td><td>Private field available for groups, all skill levels, full gear rental included</td></tr>
+      <tr><td>Tournaments</td><td>WCPL-format Ten-Man Mechanical Marker Woodsball &mdash; annual Hate City Open</td></tr>
+      <tr><td>Guarantee</td><td>100% Satisfaction Guarantee on all sessions</td></tr>
+      <tr><td>Booking</td><td>strideevents.com (walk-on / waiver) &mdash; (770) 691-0369 (groups / events)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ MEDIA CONTACT ═══ -->
+<div class="media-section" style="background:var(--mid);">
+  <div class="container">
+    <div class="media-section-header">
+      <div>
+        <div class="section-label">Press</div>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:0;">MEDIA <span>CONTACT</span></h2>
+      </div>
+    </div>
+    <div class="media-contact-card">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;">
+        <div style="width:52px;height:52px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#fff;flex-shrink:0;">DW</div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;color:var(--white);">DW Global Management</div>
+          <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.1rem;">Media &amp; Communications &mdash; Orlando, Florida</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;">
+        <div class="contact-detail" style="margin-bottom:0;">
+          <span class="contact-detail-icon">&#x2709;&#xFE0F;</span>
+          <div>
+            <div class="contact-detail-label">Media Inquiries</div>
+            <div class="contact-detail-value"><a href="mailto:aria@hq.dwglobalfl.com">aria@hq.dwglobalfl.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail" style="margin-bottom:0;">
+          <span class="contact-detail-icon">&#x1F4DE;</span>
+          <div>
+            <div class="contact-detail-label">General Phone</div>
+            <div class="contact-detail-value"><a href="tel:7706910369">(770) 691-0369</a></div>
+          </div>
+        </div>
+        <div class="contact-detail" style="margin-bottom:0;">
+          <span class="contact-detail-icon">&#x1F310;</span>
+          <div>
+            <div class="contact-detail-label">Agency Website</div>
+            <div class="contact-detail-value"><a href="http://www.dwglobalfl.com" target="_blank">dwglobalfl.com</a></div>
+          </div>
+        </div>
+      </div>
+      <a href="mailto:aria@hq.dwglobalfl.com" class="btn-primary" style="display:inline-block;">SEND MEDIA INQUIRY</a>
+      <p style="font-size:0.75rem;color:var(--muted);margin-top:1rem;line-height:1.6;">For interview requests, press credentials, photography permissions, partnership inquiries, and all other media-related communications please contact us via email. We aim to respond within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="/">TALLAPOOSA <span>PAINTBALL</span></a>
+      <p>Authentic outdoor woodsball in Tallapoosa, Georgia. Walk-on play on the 1st &amp; 3rd weekends. Summer hours: 12PM&ndash;6PM.</p>
+      <div class="social-row" style="margin-top:1.5rem;">
+        <a class="social-btn" href="https://www.facebook.com/TallapoosaPaintBall/" target="_blank">&#x1F4D8;</a>
+        <a class="social-btn" href="https://www.instagram.com/tallapoosapaintball" target="_blank">&#x1F4F7;</a>
+        <a class="social-btn" href="https://www.tiktok.com/@tallapoosapaintball" target="_blank">&#x1F3B5;</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/hco">Hate City Open</a></li><li><a href="/birthday">Birthdays</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li><li><a href="/membership">Membership</a></li><li><a href="/weather">Field Weather</a></li><li><a href="/media">Media Kit</a></li></ul></div>
+    <div class="footer-col"><h4>Book &amp; Play</h4><ul><li><a href="https://www.strideevents.com/events/tallapoosa-paintball/2026/tickets" target="_blank">Book Today</a></li><li><a href="https://www.strideevents.com/events/tallapoosa-waiver-registration/2026/register" target="_blank">Sign Waiver</a></li><li><a href="https://share.google/ZfCZCzbYbNk8jC0mU" target="_blank">Leave a Review</a></li><li><a href="tel:7706910369">(770) 691-0369</a></li><li><a href="mailto:TallapoosaPaintball@Gmail.com">Email Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2025 Tallapoosa Paintball | All Rights Reserved</span><span>Designed by <a href="http://www.dwglobalfl.com" target="_blank">DW Global Management</a> &mdash; Orlando, Florida</span></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div id="copy-toast"></div>
+
+<script src="/js/main.js"></script>
+<script>
+function copyText(text, msg) {
+  navigator.clipboard.writeText(text).then(() => {
+    const t = document.getElementById('copy-toast');
+    t.textContent = '✓ ' + msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  });
+}
+</script>
+</body>
+</html>
